@@ -1,5 +1,12 @@
+<h1>Posts</h1>
+{{outlet}}
+
+
 {{#each posts as |post|}}
-<h3>{{post.title}}</h3>
-<p>{{post.body}}</p>
-<p>By: {{post.user.name}}</p>
+  {{#link-to "posts.user" post.id post.user.id}}
+    <h3>{{post.title}}</h3>
+    <p>{{post.body}}</p>
+    <p>By: {{post.user.name}}</p>
+    <p>User Id: {{post.user.id}}</p>
+  {{/link-to}}
 {{/each}}
