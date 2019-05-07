@@ -1,23 +1,23 @@
-import { set, computed } from '@ember/object';
+import { set } from '@ember/object';
 import Route from '@ember/routing/route';
 
 export default Route.extend({
   actions: {
     goBackToUser(postId, userId) {
-      console.log(postId, userId);
+
       this.transitionTo('posts.user', userId);
       this.store
         .findRecord('user', userId)
         .then(user => {
-          console.log(user);
+          // console.log(user);
         })
         .catch(err => {
           // Error callback
           alert('There was an error trying to load the user detail.');
-          console.log(
-            'There was an error trying to load the user detail.',
-            err
-          );
+          // console.log(
+          //   'There was an error trying to load the user detail.',
+          //   err
+          // );
         });
     }
   },
@@ -55,8 +55,9 @@ export default Route.extend({
     });
   },
   setupController(controller, model) {
-    console.log(controller);
+    set(controller, 'total', this.store.total);
+    set(controller, 'limit', model.query._limit);
+    set(controller, 'start', model.query._start);
     set(controller, 'posts', model);
-    //set(controller, 'posts', model);
   }
 });

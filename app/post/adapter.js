@@ -5,9 +5,7 @@ export default typicode.extend({
     return 'posts';
   },
   handleResponse(status, headers, payload, requestData) {
-    return {
-      total: headers['x-total-count'],
-      list: payload
-    };
+    payload.total = headers['x-total-count'];
+    return payload;
   }
 });

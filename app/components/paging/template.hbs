@@ -1,5 +1,6 @@
 <div>
   <button> {{"<"}} </button>
-  <span>nav</span>
-  <button> {{">"}} </button>
+  <span>{{this.step}}{{' of '}}</span>
+  <span>{{this.total}}</span>
+  {{#link-to "posts" (query-params start=5)}} {{">"}} {{/link-to}}
 </div>

@@ -3,7 +3,11 @@ import DS from 'ember-data';
 export default DS.RESTSerializer.extend({
   normalizeResponse(store, primaryModelClass, payload, id, requestType) {
 
-    payload = { posts: payload.list, total: payload.total };
+    if (payload.total) {
+      store.set('total', payload.total);
+    }
+
+    payload = { posts: payload };
 
     payload.posts.forEach(post => {
       post.user = post.userId;
