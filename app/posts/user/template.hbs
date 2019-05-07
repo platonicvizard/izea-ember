@@ -1,6 +1,21 @@
-<h1>This is additional information</h1>
-<p> User Name: {{model.name}}</p>
+<div class="box-wrapper">
+  <div class="box">
 
-<button {{action "goBackToList"}}>
-  Go Back
-</button>
+
+    <div class="header">
+      <h1>User Detail</h1>
+    </div>
+    <div class="body">
+      <p><b> Name:</b> {{model.name}}</p>
+      <p><b>User Name:</b> {{model.username}}</p>
+      <p><b>Email:</b> {{model.email}}</p>
+      <p><b>Phone:</b> {{model.phone}}</p>
+      <p><b>Website:</b> {{model.website}}</p>
+    </div>
+
+    <div class="footer">
+      <button {{action "goBackToList"}}> Go Back </button>
+    </div>
+
+  </div>
+</div>

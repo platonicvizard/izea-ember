@@ -1,12 +1,15 @@
 <h1>Posts</h1>
 {{outlet}}
-
-
 {{#each posts as |post|}}
   {{#link-to "posts.user" post.id post.user.id}}
-    <h3>{{post.title}}</h3>
-    <p>{{post.body}}</p>
-    <p>By: {{post.user.name}}</p>
-    <p>User Id: {{post.user.id}}</p>
+    <div class="box">
+      <h3 class="header">{{post.title}}</h3>
+      <div class="body">
+        <p>{{post.body}}</p>
+      </div>
+      <p class="footer">By: {{post.user.name}}</p>
+    </div>
   {{/link-to}}
 {{/each}}
+
+<Paging />

@@ -7,7 +7,6 @@ export default Route.extend({
     }
   },
   model(params) {
-    console.log(params);
     return this.store.findRecord('user', params.user_id);
   }
 });
