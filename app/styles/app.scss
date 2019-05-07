@@ -1,0 +1,26 @@
+body {
+  overflow-x: hidden;
+
+  .box-wrapper {
+    position: absolute;
+    left: -100%;
+    width: 100%;
+    animation: slide 0.5s forwards;
+
+    .box {
+      margin: auto;
+      width: auto;
+      height: auto;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+      text-align: center;
+    }
+  }
+}
+
+@keyframes slide {
+  100% {
+    left: 0;
+  }
+}
